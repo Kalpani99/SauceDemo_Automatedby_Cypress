@@ -7,9 +7,7 @@ describe('SauceDemo Website Automation', () => {
     cy.visit(baseUrl)
   })
 
-  // ============================================================
-  // TEST 1: Login to SauceDemo
-  // ============================================================
+  // Login to SauceDemo
   it('should log in successfully to SauceDemo', () => {
     // Verify login page is loaded
     cy.get('[data-test="login-container"]', { timeout: 20000 })
@@ -34,9 +32,7 @@ describe('SauceDemo Website Automation', () => {
     cy.get('[data-test="inventory-container"]', { timeout: 20000 }).should('be.visible')
   })
 
-  // ============================================================
-  // TEST 2: Add items to cart
-  // ============================================================
+  // Add items to cart
   it('should add products to the shopping cart', () => {
     // Verify page loaded
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
@@ -64,9 +60,7 @@ describe('SauceDemo Website Automation', () => {
       .should('contain', '2')
   })
 
-  // ============================================================
-  // TEST 3: View cart and verify items
-  // ============================================================
+  // View cart and verify items
   it('should view cart and verify added items', () => {
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
     
@@ -94,9 +88,7 @@ describe('SauceDemo Website Automation', () => {
     cy.get('[data-test="inventory-item-name"]', { timeout: 10000 }).should('have.length', 2)
   })
 
-  // ============================================================
-  // TEST 4: Complete checkout process
-  // ============================================================
+  // Complete checkout process
   it('should complete the full checkout process', () => {
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
     
@@ -154,9 +146,7 @@ describe('SauceDemo Website Automation', () => {
     cy.get('[data-test="complete-header"]', { timeout: 10000 }).should('contain', 'Thank you')
   })
 
-  // ============================================================
-  // TEST 5: Filter and sort products
-  // ============================================================
+  // Filter and sort products
   it('should filter and sort products', () => {
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
     
@@ -176,9 +166,7 @@ describe('SauceDemo Website Automation', () => {
     cy.get('[data-test="inventory-list"]', { timeout: 10000 }).should('be.visible')
   })
 
-  // ============================================================
-  // TEST 6: Login with invalid credentials
-  // ============================================================
+  // Login with invalid credentials
   it('should show error with invalid credentials', () => {
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
     
@@ -197,9 +185,7 @@ describe('SauceDemo Website Automation', () => {
       .and('contain', 'Username and password')
   })
 
-  // ============================================================
-  // TEST 7: Logout functionality
-  // ============================================================
+  // Logout functionality
   it('should logout successfully', () => {
     cy.get('[data-test="login-container"]', { timeout: 20000 }).should('be.visible')
     
